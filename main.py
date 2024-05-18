@@ -13,7 +13,7 @@ player=Player()
 
 screen.onkey(fun=player.move_player,key="Up")
 car=CarManager()
-
+score=Scoreboard()
 
 
 
@@ -31,6 +31,14 @@ while game_is_on:
     if player.ycor()>280:
         player.start_position()
         car.move_encriment()
+        score.increment_score()
+
+    for carr in car.car_list :
+
+        if player.distance(carr)<20:
+            game_is_on=False
+
+
 
 
 
