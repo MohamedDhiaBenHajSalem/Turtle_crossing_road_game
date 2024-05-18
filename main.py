@@ -10,12 +10,28 @@ screen.tracer(0)
 screen.listen()
 player=Player()
 
+
 screen.onkey(fun=player.move_player,key="Up")
+car=CarManager()
+
+
+
 
 
 game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     screen.update()
+    car.create_car()
+    car.move_car()
+
+
+
+
     if player.ycor()>280:
         player.start_position()
+        car.move_encriment()
+
+
+
+
