@@ -37,9 +37,11 @@ while game_is_on:
 
         if player.distance(carr)<20:
             game_is_on=False
+            score.game_over()
 
 
 
 
 
 
+screen.exitonclick()
